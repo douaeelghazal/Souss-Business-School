@@ -42,9 +42,9 @@ class HOMEView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['news_list'] = News.objects.all()  # Tous les objets de News
-        context['formatis'] = Formati.objects.all()  # Tous les objets de Formati
-        context['contact_form'] = ContactForm()  # Ajouter le formulaire de contact
+        context['news_list'] = News.objects.filter(publish=True)[:10]
+        context['formatis'] = Formati.objects.filter(publish=True)
+        context['contact_form'] = ContactForm()
         return context
 
     def post(self, request, *args, **kwargs):
