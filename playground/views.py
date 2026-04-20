@@ -238,28 +238,7 @@ class EventList(PaginatedListMixin):
         context['search_input'] = self.request.GET.get('search_area', '')
         return context
    
-class Events_List(PaginatedListMixin):
-    model = Event
-    template_name = 'EventsList.html'
-    context_object_name = 'events'
-    paginate_by = 10
 
-    def get_queryset(self):
-        try:
-            queryset = Event.objects.filter(publish=True).select_related('user').order_by('-event_start_date')
-            theme_filter = self.request.GET.get('theme', '').strip()
-            if theme_filter:
-                queryset = queryset.filter(theme__icontains=theme_filter)
-            return queryset
-        except Exception as e:
-            logger.error(f"Error in Events_List.get_queryset: {e}")
-            return Event.objects.none()
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['themes'] = sorted(set([theme.strip().lower() for theme in Event.objects.filter(publish=True).values_list('theme', flat=True).distinct() if theme]))
-        context['selected_theme'] = self.request.GET.get('theme', '')
-        return context
             
     
 class EventDetail(DetailView):
@@ -339,18 +318,7 @@ class EquipeList(PaginatedListMixin):
         context['search_input'] = self.request.GET.get('search_area', '')
         return context
     
-class EquipesList(PaginatedListMixin):
-    model = Equipe
-    template_name = 'EquipeList.html'
-    context_object_name = 'equipe'
-    paginate_by = 10
-    
-    def get_queryset(self):
-        try:
-            return Equipe.objects.filter(publish=True).select_related('user').order_by('name')
-        except Exception as e:
-            logger.error(f"Error in EquipesList.get_queryset: {e}")
-            return Equipe.objects.none()
+
 
 class EquipeDetail(DetailView):
     model = Equipe   
@@ -420,18 +388,7 @@ class FormationList(PaginatedListMixin):
         context['search_input'] = self.request.GET.get('search_area', '')
         return context
 
-class FormationsList(PaginatedListMixin):
-    model = Formati
-    template_name = 'Acceuil.html'
-    context_object_name = 'formatis'
-    paginate_by = 10
-    
-    def get_queryset(self):
-        try:
-            return Formati.objects.filter(publish=True).prefetch_related('prof', 'prerequi', 'obj').order_by('name')
-        except Exception as e:
-            logger.error(f"Error in FormationsList.get_queryset: {e}")
-            return Formati.objects.none()
+
 
 class FormationDetail(DetailView):
     model = Formati

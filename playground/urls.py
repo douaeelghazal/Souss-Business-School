@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import Alumnidelete,AlumniDetail,AlumniUpdate,Deplomedelete,DeplomeCreate,DeplomeDetail,DeplomeList,DeplomeUpdate,ReseauUpdate,ReseauCreate,Reseaudelete,ReseauList,ReseauDetail,HistoireUpdate,RetourDetail,HistoireCreate,HistoireList,Histoiredelete,HistoireDetail,RetourDetail,RetourList,RetourUpdate,Retourdelete,RetourCreate,Prerequisitedelete,PrerequisiteUpdate,PrerequisiteCreate,PrerequisiteDetail,PrerequisiteList,Objectifdelete,ObjectifUpdate, ObjectifCreate,ObjectifDetail,ObjectifsList,ObjectifList,Profdelete,ProfUpdate,ProfCreate,ProfDetail,ProfsList,ProfList, FormationDetail,FormationCreate,Formationdelete,FormationUpdate,FormationCreate,FormationsList,FormationList, EquipesList,EquipeDetail,EquipeCreate,EquipeUpdate,Equipedelete,EquipeList, NewsList ,NewsDetail,NewsCreate ,NewsUpdate,Newsdelete , CustomLoginView ,RegisterPage,HomeView ,HOMEView ,EventList ,EventDetail,EventCreate ,EventUpdate,Eventdelete,Events_List,NewssList
+from .views import Alumnidelete,AlumniDetail,AlumniUpdate,Deplomedelete,DeplomeCreate,DeplomeDetail,DeplomeList,DeplomeUpdate,ReseauUpdate,ReseauCreate,Reseaudelete,ReseauList,ReseauDetail,HistoireUpdate,RetourDetail,HistoireCreate,HistoireList,Histoiredelete,HistoireDetail,RetourDetail,RetourList,RetourUpdate,Retourdelete,RetourCreate,Prerequisitedelete,PrerequisiteUpdate,PrerequisiteCreate,PrerequisiteDetail,PrerequisiteList,Objectifdelete,ObjectifUpdate, ObjectifCreate,ObjectifDetail,ObjectifsList,ObjectifList,Profdelete,ProfUpdate,ProfCreate,ProfDetail,ProfsList,ProfList, FormationDetail,FormationCreate,Formationdelete,FormationUpdate,FormationList, EquipeDetail,EquipeCreate,EquipeUpdate,Equipedelete,EquipeList, NewsList ,NewsDetail,NewsCreate ,NewsUpdate,Newsdelete , CustomLoginView ,RegisterPage,HomeView ,HOMEView ,EventList ,EventDetail,EventCreate ,EventUpdate,Eventdelete,NewssList
 from django.contrib.auth.views import LogoutView
 from django.conf import settings
 from django.conf.urls.static import static
@@ -19,19 +19,16 @@ urlpatterns = [
  path ('news/<int:pk>/',NewsDetail.as_view(),name ='news'),
  path ('delete_news/<int:pk>/',Newsdelete.as_view(),name ='news_delete'),
  path ('events',EventList.as_view(),name ='event_list'),
- path ('Events',Events_List.as_view(),name ='EventsList'),
  path ('create_event/',EventCreate.as_view(),name ='event_create'),
  path ('update_event/<int:pk>/',EventUpdate.as_view(),name ='event_update'),
  path ('event/<int:pk>/',EventDetail.as_view(),name ='event'),
  path ('delete_event/<int:pk>/',Eventdelete.as_view(),name ='event_delete'),
  path ('equipe',EquipeList.as_view(),name ='equipe_list'),
- path ('equipes',EquipesList.as_view(),name ='EquipeList'),
  path ('create_equipe/',EquipeCreate.as_view(),name ='equipe_create'),
  path ('update_equipe/<int:pk>/',EquipeUpdate.as_view(),name ='equipe_update'),
  path ('equipe/<int:pk>/',EquipeDetail.as_view(),name ='equipe'),
  path ('delete_equipe/<int:pk>/',Equipedelete.as_view(),name ='equipe_delete'),
  path ('formation',FormationList.as_view(),name ='formation_list'),
- path ('Formation',FormationsList.as_view(),name ='Acceuil'),
  path ('create_formation/',FormationCreate.as_view(),name ='formati_create'),
  path ('update_formation/<int:pk>/',FormationUpdate.as_view(),name ='formati_update'),
  path ('formation/<int:pk>/',FormationDetail.as_view(),name ='formati'),
