@@ -127,6 +127,7 @@ class Formati(models.Model):
     prerequi = models.ManyToManyField(Prerequi)
     conditions_access = models.FileField(upload_to='formations/documents/',  blank=True)
     programme = models.FileField(upload_to='formations/documents/', blank=True)
+    publish = models.BooleanField(default=False)
     def __str__(self):
         return self.name
   
