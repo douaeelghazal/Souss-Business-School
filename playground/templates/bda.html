@@ -83,25 +83,25 @@
                     <!-- Section Licence -->
                     <div class="submenu-column">
                         <h3>Licence d'excellence</h3>
+                        <ul>
                         {% for formati in formatis %}
                         {% if formati.formation_type == "Licence" %}
-                        <ul>
                             <li><a href="{% url 'formati' formati.id %}" class="submenu-item">> {{formati.name}}</a></li>
-                        </ul>
                         {% endif %}
                         {% endfor %}
+                        </ul>
                     </div>
 
                     <!-- Section Master -->
                     <div class="submenu-column">
                         <h3>Master d'excellence</h3>
+                        <ul>
                         {% for formati in formatis %}
                         {% if formati.formation_type == "Master" %}
-                        <ul>
                             <li><a href="{% url 'formati' formati.id %}" class="submenu-item">> {{formati.name}}</a></li>
-                        </ul>
                         {% endif %}
                         {% endfor %}
+                        </ul>
                     </div>
                 </div>
             </div>
