@@ -163,7 +163,7 @@ ul {
 
 /* Style pour les colonnes */
 .submenu-column {
-    width: 80%; /* Chaque colonne prend environ la moitié de la largeur */
+    flex: 1; /* Chaque colonne prend 50% de la largeur */
     padding: 0 10px; /* Espacement interne */
 }
 
