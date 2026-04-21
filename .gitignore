@@ -1,21 +1,86 @@
-# Python
+# ============= Python =============
 *.pyc
 *.pyo
+*.pyd
 __pycache__/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+*.egg
 
-# Django
-db.sqlite3
+# ============= Django =============
+# Database files
+backend/data/db.sqlite3
+backend/data/*.sqlite3
 *.sqlite3
-schema.sql/
 
-# Virtualenv
+# Migrations (optional - usually committed)
+# backend/*/migrations/
+
+# Django shell history
+.python-history
+
+# ============= Virtual Environments =============
+.venv/
+.venv-1/
 venv/
 env/
+ENV/
+env.bak/
+venv.bak/
 
-# Static & Media folders
-/static/
-/media/
+# ============= Static & Media Files =============
+# Development static files
+backend/playground/static/
+backend/static/
 
+# Production static files
+frontend/staticfiles/
+frontend/assets/
+
+# User uploaded media
+frontend/media/
+
+# ============= Environment & Secrets =============
 # Local environment variables
 .env
-settings.py/
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+.directory
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+.cache/
+tmp/
+
+# Database backups
+*.sql
+*.backup
+
+# ============= Project Specific =============
+# Old folder structure (if migrating)
+Souss Business School main/
+staticfiles/ (old location)
+
+# Local test files
+test_context.py
+check_db.py
